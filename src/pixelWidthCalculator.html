@@ -14,6 +14,7 @@
         'Arial',
         'Avenir',
         'Avenir Next',
+        'BlinkMacSystemFont',
         'Comic Sans MS',
         'Courier New',
         'Georgia',
@@ -65,7 +66,7 @@
       }, {});
 
       var elFinal = document.getElementById('elFinal');
-      elFinal.innerHTML = `const widthsMap = ${JSON.stringify(widths, null, 2)};
+      elFinal.innerHTML = `const widthsMap: Record<string, Record<string, number[]>> = ${JSON.stringify(widths, null, 2)};
 
 export default widthsMap;
 `;
