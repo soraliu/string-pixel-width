@@ -1,4 +1,4 @@
-const widthsMap: Record<string, Record<string, number[]>> = {
+const widthsMap = {
   blinkmacsystemfont: {
     0: [61, 66, 63, 67],
     1: [44, 48, 45, 48],

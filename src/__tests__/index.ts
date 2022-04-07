@@ -1,4 +1,4 @@
-import index from '../src/index'
+import index from '../index'
 
 test('test basic', () => {
   expect(index('test string')).toBe(435)

@@ -32,6 +32,7 @@ const getWidth = (str: string, settings?: ISettings) => {
         return true
       }
       // use width of 'x' as fallback for unregistered char
+      // @ts-ignore
       const widths = map[font][char] || map[font].x
       const width = widths[variant]
       totalWidth += width
