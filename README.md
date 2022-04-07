@@ -34,41 +34,33 @@ npm install --save @soral/string-pixel-width
 ## Example
 
 ```javascript
-var pixelWidth = require('@soral/string-pixel-width')
+var { pixelWidth } = require('@soral/string-pixel-width')
 
 const width = pixelWidth('My text ...', { size: 10 })
-console.log('This text is ' + width + 'px long in the size of 10px.')
-
-// This text is 43.5px long in the size of 10px.
+console.log('This text is ' + width + 'px long in the size of 10px.') // This text is 43.5px long in the size of 10px.
 ```
 
 ```javascript
-var pixelWidth = require('@soral/string-pixel-width')
+var { pixelWidth } = require('@soral/string-pixel-width')
 
 const width = pixelWidth('My text ...', { font: 'impact', size: 10 })
-console.log('This text is ' + width + 'px long in the size of 10px.')
-
-// This text is 42px long in the size of 10px.
+console.log('This text is ' + width + 'px long in the size of 10px.') // This text is 42px long in the size of 10px.
 ```
 
 ```javascript
-var pixelWidth = require('@soral/string-pixel-width')
+var { pixelWidth } = require('@soral/string-pixel-width')
 
 const width = pixelWidth('My text ...', { font: 'open sans', size: 10, bold: true, italic: true })
-console.log('This text is ' + width + 'px long in the size of 10px.')
-
-// This text is 47px long in the size of 10px using bold and italic proportions.
+console.log('This text is ' + width + 'px long in the size of 10px.') // This text is 47px long in the size of 10px using bold and italic proportions.
 ```
 
 Custom Map
 
 ```javascript
-
-var pixelWidth = require('@soral/string-pixel-width');
+var { pixelWidth } = require('@soral/string-pixel-width')
 
 // map can be created by src/pixelWidthCalculator.html
 const width = pixelWidth('My text ...', { font: 'custom', map: { ... } });
-
 ```
 
 ## How to contribute

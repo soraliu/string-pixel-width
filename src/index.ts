@@ -13,7 +13,7 @@ interface ISettings {
 
 const settingsDefaults: ISettings = { font: 'arial', size: 100 }
 
-const getWidth = (str: string, settings?: ISettings) => {
+export const pixelWidth = (str: string, settings?: ISettings) => {
   const sett: ISettings = { ...settingsDefaults, ...settings }
   const font = sett?.font?.toLowerCase() || ''
   const size = sett.size as number
@@ -40,5 +40,3 @@ const getWidth = (str: string, settings?: ISettings) => {
     })
   return totalWidth * (size / 100)
 }
-
-export default getWidth

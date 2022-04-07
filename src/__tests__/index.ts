@@ -1,50 +1,50 @@
-import index from '../index'
+import { pixelWidth } from '../index'
 
 test('test basic', () => {
-  expect(index('test string')).toBe(435)
+  expect(pixelWidth('test string')).toBe(435)
 })
 
 test('test basic with settings', () => {
-  expect(index('test string', { size: 10 })).toBe(43.5)
+  expect(pixelWidth('test string', { size: 10 })).toBe(43.5)
 })
 
 test('test basic with bold', () => {
-  expect(index('test string', { font: 'open sans', bold: true })).toBe(424)
+  expect(pixelWidth('test string', { font: 'open sans', bold: true })).toBe(424)
 })
 
 test('test basic with italic', () => {
-  expect(index('test string', { font: 'open sans', italic: true })).toBe(398)
+  expect(pixelWidth('test string', { font: 'open sans', italic: true })).toBe(398)
 })
 
 test('test basic with bold italic', () => {
-  expect(index('test string', { font: 'open sans', bold: true, italic: true })).toBe(404)
+  expect(pixelWidth('test string', { font: 'open sans', bold: true, italic: true })).toBe(404)
 })
 
 test('test basic with different font', () => {
-  expect(index('test string', { font: 'impact' })).toBe(420)
-  expect(index('test string', { font: 'impact', size: 10 })).toBe(42)
-  expect(index('test string', { font: 'tahoma', size: 10 })).toBe(44.300000000000004)
+  expect(pixelWidth('test string', { font: 'impact' })).toBe(420)
+  expect(pixelWidth('test string', { font: 'impact', size: 10 })).toBe(42)
+  expect(pixelWidth('test string', { font: 'tahoma', size: 10 })).toBe(44.300000000000004)
 })
 
 test('test diacritic', () => {
-  const lengthWithDiacritics = index('test ěščřžýáíé')
-  const lengthWithoutDiacritics = index('test escrzyaie')
+  const lengthWithDiacritics = pixelWidth('test ěščřžýáíé')
+  const lengthWithoutDiacritics = pixelWidth('test escrzyaie')
   expect(lengthWithDiacritics).toBe(lengthWithoutDiacritics)
 })
 
 test('test non-printable chars', () => {
   // LF, NULL byte, ESC
   const string = `${String.fromCharCode(10)}${String.fromCharCode(0)}${String.fromCharCode(27)}`
-  expect(index(string)).toBe(0)
+  expect(pixelWidth(string)).toBe(0)
 })
 
 test('test non-existing font', () => {
   expect(() => {
     // @ts-ignore
-    index('foo', { font: 'bar' })
+    pixelWidth('foo', { font: 'bar' })
   }).toThrow()
 })
 
 test('test printable, but unregistered character', () => {
-  expect(index('‐')).toBe(50)
+  expect(pixelWidth('‐')).toBe(50)
 })
