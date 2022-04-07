@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@soral/string-pixel-width.svg?style=flat-square)](https://www.npmjs.com/package/@soral/string-pixel-width)
 
-String pixel width measurement on the backend in Javascript. Thansk to [string-pixel-width](https://www.npmjs.com/package/string-pixel-width)
+String pixel width measurement on the backend in Javascript. Thanks to [string-pixel-width](https://www.npmjs.com/package/string-pixel-width)
 
 ## Installation
 
